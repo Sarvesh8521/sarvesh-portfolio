@@ -64,10 +64,10 @@ const App = () => {
           <h2 className="text-4xl font-bold text-center mb-12 text-indigo-700">About Me</h2>
           <div className="flex flex-col md:flex-row items-center md:space-x-12">
             <div className="md:w-1/3 mb-8 md:mb-0">
-              {/* FIX: Simplified alt attribute to avoid redundancy warning */}
+              {/* FIX: Changed alt attribute to be more specific to avoid ESLint redundancy error */}
               <img
                 src="https://placehold.co/400x400/E0E7FF/4F46E5?text=Your+Photo"
-                alt="Your professional photo" /* Changed from "Your Photo" to be more descriptive and avoid potential redundancy */
+                alt="Sarvesh Singh's photo" /* Changed from "Your professional photo" to be more specific */
                 className="w-full h-auto rounded-full shadow-lg border-4 border-indigo-200 object-cover"
               />
             </div>
@@ -216,7 +216,7 @@ const App = () => {
               </a> */}
             </div>
           </div>
-        </div>
+        </div>  
       </section>
 
       {/* Footer */}
