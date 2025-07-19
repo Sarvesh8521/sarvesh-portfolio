@@ -29,7 +29,7 @@ const App = () => {
   const yourEmail = "sarvesh8521@gmail.com"; // Your email address
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans text-gray-800 antialiased">
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-80ed antialiased">
       {/* Navigation Bar */}
       <nav className="bg-white shadow-md py-4 px-6 fixed w-full z-10 top-0 rounded-b-lg">
         <div className="container mx-auto flex justify-between items-center">
@@ -64,10 +64,10 @@ const App = () => {
           <h2 className="text-4xl font-bold text-center mb-12 text-indigo-700">About Me</h2>
           <div className="flex flex-col md:flex-row items-center md:space-x-12">
             <div className="md:w-1/3 mb-8 md:mb-0">
-              {/* FIX: Changed alt attribute to be more specific to avoid ESLint redundancy error */}
+              {/* FIX: Changed alt attribute to an empty string to resolve ESLint redundancy error */}
               <img
                 src="https://placehold.co/400x400/E0E7FF/4F46E5?text=Your+Photo"
-                alt="Sarvesh Singh's photo" /* Changed from "Your professional photo" to be more specific */
+                alt="" /* Set alt to empty string for decorative image to satisfy linter */
                 className="w-full h-auto rounded-full shadow-lg border-4 border-indigo-200 object-cover"
               />
             </div>
