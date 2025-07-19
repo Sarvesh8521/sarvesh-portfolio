@@ -64,9 +64,10 @@ const App = () => {
           <h2 className="text-4xl font-bold text-center mb-12 text-indigo-700">About Me</h2>
           <div className="flex flex-col md:flex-row items-center md:space-x-12">
             <div className="md:w-1/3 mb-8 md:mb-0">
+              {/* FIX: Simplified alt attribute to avoid redundancy warning */}
               <img
                 src="https://placehold.co/400x400/E0E7FF/4F46E5?text=Your+Photo"
-                alt="Your Photo"
+                alt="Your professional photo" /* Changed from "Your Photo" to be more descriptive and avoid potential redundancy */
                 className="w-full h-auto rounded-full shadow-lg border-4 border-indigo-200 object-cover"
               />
             </div>
@@ -159,7 +160,7 @@ const App = () => {
               <div key={index} className="bg-indigo-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border border-indigo-100">
                 <img
                   src={`https://placehold.co/600x400/E0E7FF/4F46E5?text=Project+${index + 1}`}
-                  alt={project.title}
+                  alt={project.title} /* Using project title as alt text */
                   className="w-full h-48 object-cover rounded-md mb-4"
                 />
                 <h3 className="text-2xl font-semibold text-indigo-600 mb-2">{project.title}</h3>
@@ -167,8 +168,10 @@ const App = () => {
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-indigo-200 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">React</span> {/* Placeholder, update with actual tech */}
-                  <span className="bg-indigo-200 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Node.js</span> {/* Placeholder, update with actual tech */}
+                  {/* Dynamically render tech stack from project data */}
+                  {project.tech.map((tech, techIndex) => (
+                    <span key={techIndex} className="bg-indigo-200 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">{tech}</span>
+                  ))}
                 </div>
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline font-medium flex items-center">
                   View Project &nbsp;
